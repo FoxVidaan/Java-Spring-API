@@ -30,6 +30,11 @@ public class CinemaController {
         return this.service.save(cinema);
     }
 
+    @PutMapping
+    public Cinema update(@RequestBody Cinema cinema) {
+        return this.service.save(cinema);
+    }
+
     @DeleteMapping
     public void delete(@RequestBody Cinema cinema) {
         this.service.delete(cinema);

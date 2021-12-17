@@ -1,9 +1,14 @@
 package fr.formation.apicine.controllers;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateDeserializer;
+import com.fasterxml.jackson.datatype.jsr310.deser.LocalDateTimeDeserializer;
 import fr.formation.apicine.entities.Seance;
 import fr.formation.apicine.services.SeanceService;
+import org.apache.tomcat.util.json.JSONParser;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -22,17 +27,22 @@ public class SeanceController {
     }
 
     @GetMapping("{date}")
-    public Seance findByNom(@PathVariable Date date) {
+    public Seance findByNom(@PathVariable LocalDateTime date) {
         return this.service.findByDate(date);
     }
     
     @PostMapping
-    public Seance create(@RequestBody Seance Seance) {
-        return this.service.save(Seance);
+    public Seance create(@RequestBody Seance seance) {
+        return this.service.save(seance);
+    }
+
+    @PutMapping
+    public Seance update(@RequestBody Seance seance) {
+        return this.service.save(seance);
     }
 
     @DeleteMapping
-    public void delete(@RequestBody Seance Seance) {
-        this.service.delete(Seance);
+    public void delete(@RequestBody Seance seance) {
+        this.service.delete(seance);
     }
 }

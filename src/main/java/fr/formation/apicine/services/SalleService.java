@@ -2,7 +2,6 @@ package fr.formation.apicine.services;
 
 import fr.formation.apicine.entities.Salle;
 import fr.formation.apicine.repositories.SalleRepository;
-
 import java.util.List;
 
 public class SalleService {

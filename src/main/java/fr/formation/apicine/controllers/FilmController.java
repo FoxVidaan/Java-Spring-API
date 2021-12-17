@@ -26,8 +26,13 @@ public class FilmController {
     }
     
     @PostMapping
-    public Film create(@RequestBody Film Film) {
-        return this.service.save(Film);
+    public Film create(@RequestBody Film film) {
+        return this.service.save(film);
+    }
+
+    @PutMapping
+    public Film update(@RequestBody Film film) {
+        return this.service.save(film);
     }
 
     @DeleteMapping

@@ -26,12 +26,17 @@ public class SalleController {
     }
     
     @PostMapping
-    public Salle create(@RequestBody Salle Salle) {
-        return this.service.save(Salle);
+    public Salle create(@RequestBody Salle salle) {
+        return this.service.save(salle);
+    }
+
+    @PutMapping
+    public Salle update(@RequestBody Salle salle) {
+        return this.service.save(salle);
     }
 
     @DeleteMapping
-    public void delete(@RequestBody Salle Salle) {
-        this.service.delete(Salle);
+    public void delete(@RequestBody Salle salle) {
+        this.service.delete(salle);
     }
 }

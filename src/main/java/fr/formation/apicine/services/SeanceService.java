@@ -3,6 +3,7 @@ package fr.formation.apicine.services;
 import fr.formation.apicine.entities.Seance;
 import fr.formation.apicine.repositories.SeanceRepository;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -17,7 +18,7 @@ public class SeanceService {
         return this.repository.findAll();
     }
 
-    public Seance findByDate(Date date) {
+    public Seance findByDate(LocalDateTime date) {
         return this.repository.findByDate(date);
     }
 
